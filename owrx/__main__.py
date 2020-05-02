@@ -11,12 +11,15 @@ from owrx.pskreporter import PskReporter
 from owrx.version import openwebrx_version
 
 import logging
+import socket
 
 logging.basicConfig(level=logging.DEBUG, format="%(asctime)s - %(name)s - %(levelname)s - %(message)s")
 logger = logging.getLogger(__name__)
 
+class HTTPServerV6(HTTPServer):
+    address_family = socket.AF_INET6
 
-class ThreadedHttpServer(ThreadingMixIn, HTTPServer):
+class ThreadedHttpServer(ThreadingMixIn, HTTPServerV6):
     pass
 
 
