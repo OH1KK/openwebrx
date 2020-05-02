@@ -240,6 +240,36 @@ sdrs = {
             },
         },
     },
+    "hackrf": {
+        "name": "HackRF One",
+        "type": "hackrf",
+        "ppm": 0,
+        # you can change this if you use an upconverter. formula is:
+        # center_freq + lfo_offset = actual frequency on the sdr
+        # "lfo_offset": 0,
+        "profiles": {
+            "70cm": {
+                "name": "70cm ham radio",
+                "center_freq": 434000000,
+                "rf_gain": 40,
+                "lna_gain": 24,
+                "rf_amp": 1,
+                "samp_rate": 6000000,
+                "start_freq": 433500000,
+                "start_mod": "nfm",
+            },
+            "2m": {
+                "name": "2m ham radio",
+                "center_freq": 145000000,
+                "rf_gain": 40,
+                "lna_gain": 24,
+                "rf_amp": 1,
+                "samp_rate": 2400000,
+                "start_freq": 145500000,
+                "start_mod": "nfm",
+            },
+        },    
+    },
 }
 
 # ==== Color themes ====
